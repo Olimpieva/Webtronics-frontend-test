@@ -1,0 +1,33 @@
+@import './variables.scss';
+
+%mainTextShared {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 140%;
+  color: $mainTextColor;
+}
+
+%headlineShared {
+  font-family: 'Clash Display', 'Helvetica', sans-serif;
+  font-size: 150px;
+  font-weight: 600;
+  line-height: 120%;
+  color: $mainTextColor;
+}
+
+%titleShared {
+  font-family: 'Clash Display', 'Helvetica', sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 120%;
+  color: $mainTextColor;
+}
+
+%subtitleShared {
+  font-family: 'Clash Display', 'Helvetica', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 120%;
+  color: $mainTextColor;
+}

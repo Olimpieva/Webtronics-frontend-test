@@ -1,0 +1,49 @@
+@import 'styles/scss/variables.scss';
+@import 'styles/scss/mixins.scss';
+@import 'styles/scss/extensions.scss';
+
+.container {
+  border: none;
+  position: relative;
+}
+
+.inputContainer {
+  @include roundedGradientBorder(8px, $gradient-1);
+}
+
+.input {
+  @extend %mainTextShared;
+
+  width: 100%;
+  max-width: 493px;
+  max-height: 70px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: $formTextColor;
+
+  &::placeholder {
+    color: $formTextColor;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $formTextColor;
+  }
+
+  &:-moz-placeholder {
+    color: $formTextColor;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $formTextColor;
+    opacity: 1;
+  }
+
+  &:-ms-input-placeholder {
+    color: $formTextColor;
+  }
+
+  &::-ms-input-placeholder {
+    color: $formTextColor;
+  }
+}

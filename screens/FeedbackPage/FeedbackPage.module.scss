@@ -1,0 +1,21 @@
+@import 'styles/scss/variables.scss';
+
+.page {
+  position: relative;
+  background-color: $mainBgColor;
+  z-index: -2;
+}
+
+.layout {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 815px;
+  background-image: url('/background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}

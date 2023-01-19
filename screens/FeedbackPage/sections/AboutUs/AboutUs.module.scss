@@ -1,0 +1,76 @@
+@import 'styles/scss/extensions.scss';
+@import 'styles/scss/mixins.scss';
+
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.mentorList {
+  position: relative;
+  display: flex;
+  gap: 21px;
+}
+
+.mentor {
+  max-width: 188px;
+
+  &:first-child,
+  &:last-child {
+    margin: 51px 0 0;
+  }
+}
+
+.imageContainer {
+  width: 188px;
+  height: 188px;
+  margin: 0 0 16px;
+
+  @include roundedGradientBorder(50%, $gradient-1);
+
+  .image {
+    width: 100%;
+    height: 188px;
+    border-radius: 50%;
+  }
+}
+
+.title {
+  @extend %titleShared;
+
+  margin-bottom: 56px;
+}
+
+.subtitle {
+  @extend %subtitleShared;
+
+  margin-bottom: 117px;
+  position: relative;
+  text-align: center;
+
+  &::after {
+    content: '';
+    width: 394px;
+    height: 157px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    background: url('/mentors-scheme-lines.svg') no-repeat;
+  }
+}
+
+.description {
+  @extend %mainTextShared;
+
+  max-width: 486px;
+  margin-top: 109px;
+}

@@ -1,0 +1,66 @@
+@import 'styles/scss/extensions.scss';
+@import 'styles/scss/variables.scss';
+
+.footer {
+  padding: 43px 225px 34px 0;
+  display: flex;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid transparent;
+  border-image: $gradient-1;
+  -moz-border-image: $gradient-1;
+  -webkit-border-image: $gradient-1;
+  border-image-slice: 1;
+}
+
+.infoContainer {
+  max-width: 231px;
+  margin-right: 193px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.address {
+  @extend %mainTextShared;
+
+  line-height: 20px;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 255px;
+  margin-right: 165px;
+}
+
+.navList {
+  list-style-type: none;
+  max-height: 83px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 16px;
+  column-gap: 145px;
+}
+
+.navItem {
+  @extend %mainTextShared;
+
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.socialList {
+  display: flex;
+  list-style-type: none;
+  gap: 25px;
+}

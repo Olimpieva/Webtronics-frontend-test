@@ -1,0 +1,22 @@
+$desktopBreakpoint: 1280px;
+$tabletBreakpoint: 1024px;
+$mobileBreakpoint: 459px;
+$maxAppWidth: 800px;
+
+$mainBgColor: #0c102d;
+$mainTextColor: #fff;
+$formTextColor: #a2cbfb;
+$errorTextColor: #fd4646;
+
+$mainButtonTextColor: #0a1482;
+$hoverButtonTextColor: #3b48d0;
+$activeButtonTextColor: #fff;
+
+$gradient-1: linear-gradient(152.14deg, rgba(21, 191, 253, 0.7) 9.96%, rgba(156, 55, 253, 0.7) 100%);
+$gradient-2: linear-gradient(180deg, #1ff2ff 0%, #27f9e5 52.66%, #2fffcd 100%);
+$gradient-3: llinear-gradient(
+  90deg,
+  rgba(21, 191, 253, 0) 8.03%,
+  rgba(21, 191, 253, 0.7) 69.15%,
+  rgba(156, 55, 253, 0.7) 97.95%
+);

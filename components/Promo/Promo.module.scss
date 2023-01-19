@@ -1,0 +1,40 @@
+@import 'styles/scss/extensions.scss';
+
+.container {
+  margin: 0 auto;
+  max-width: 1191px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  @extend %headlineShared;
+}
+
+.description {
+  @extend %mainTextShared;
+
+  max-width: 359px;
+  margin: 36px 0 0;
+}
+
+.containerTop {
+  display: flex;
+  align-items: center;
+  gap: 57px;
+}
+
+.containerBottom {
+  margin: -20px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.subtitle {
+  @extend %subtitleShared;
+
+  margin: -8px 0 0;
+  align-self: flex-end;
+}

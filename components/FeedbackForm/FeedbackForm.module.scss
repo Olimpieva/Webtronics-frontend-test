@@ -1,0 +1,28 @@
+@import 'styles/scss/variables.scss';
+@import 'styles/scss/mixins.scss';
+@import 'styles/scss/extensions.scss';
+
+.form {
+  @include roundedGradientBorder(20px, $gradient-1);
+
+  max-width: 1224px;
+  margin: 0 auto;
+  padding: 56px 365px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+}
+
+.title {
+  @extend %subtitleShared;
+
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.subtitle {
+  @extend %mainTextShared;
+
+  margin: 0 0 24px;
+  text-align: center;
+}
