@@ -1,6 +1,6 @@
-$desktopBreakpoint: 1280px;
-$tabletBreakpoint: 1024px;
-$mobileBreakpoint: 459px;
+$desktopBreakpoint: 1024px;
+$tabletBreakpoint: 780px;
+$mobileBreakpoint: 450px;
 $maxAppWidth: 800px;
 
 $mainBgColor: #0c102d;
@@ -14,9 +14,15 @@ $activeButtonTextColor: #fff;
 
 $gradient-1: linear-gradient(152.14deg, rgba(21, 191, 253, 0.7) 9.96%, rgba(156, 55, 253, 0.7) 100%);
 $gradient-2: linear-gradient(180deg, #1ff2ff 0%, #27f9e5 52.66%, #2fffcd 100%);
-$gradient-3: llinear-gradient(
+$gradient-3: linear-gradient(
   90deg,
   rgba(21, 191, 253, 0) 8.03%,
   rgba(21, 191, 253, 0.7) 69.15%,
+  rgba(156, 55, 253, 0.7) 97.95%
+);
+$gradient-3-cropped: linear-gradient(
+  90deg,
+  rgba(21, 191, 253, 0) 73.95%,
+  rgba(21, 191, 253, 0.7) 90.95%,
   rgba(156, 55, 253, 0.7) 97.95%
 );

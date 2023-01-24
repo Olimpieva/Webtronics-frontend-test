@@ -3,7 +3,6 @@
 .page {
   position: relative;
   background-color: $mainBgColor;
-  z-index: -2;
 }
 
 .layout {
@@ -17,5 +16,6 @@
   background-image: url('/background.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 1;
+  pointer-events: none;
 }

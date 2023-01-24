@@ -8,7 +8,7 @@
 }
 
 .inputContainer {
-  @include roundedGradientBorder(8px, $gradient-1);
+  @include roundedGradientBorder(8px, 1px, $gradient-1);
 }
 
 .input {

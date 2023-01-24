@@ -1,0 +1,42 @@
+@import 'styles/scss/extensions.scss';
+
+.container {
+  max-width: 1191px;
+  margin: 0 auto;
+  padding: 0 60px 0 40px;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  @extend %headlineShared;
+}
+
+.description {
+  @extend %mainTextShared;
+
+  max-width: 359px;
+  margin: 36px 0 0;
+}
+
+.containerTop {
+  display: flex;
+  align-items: center;
+  gap: 57px;
+}
+
+.containerBottom {
+  margin: -26px 0 0 -6px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.subtitle {
+  @extend %titleShared-32;
+
+  margin: -8px 20px 0 0;
+  align-self: flex-end;
+}

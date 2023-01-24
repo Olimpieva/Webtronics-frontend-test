@@ -2,13 +2,15 @@
 @import 'styles/scss/mixins.scss';
 
 .section {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 40px;
+  box-sizing: content-box;
 }
 
 .container {
+  padding-right: 120px;
   display: flex;
   gap: 16px;
 }
@@ -33,7 +35,7 @@
   height: 188px;
   margin: 0 0 16px;
 
-  @include roundedGradientBorder(50%, $gradient-1);
+  @include roundedGradientBorder(50%, 2px, $gradient-1);
 
   .image {
     width: 100%;
@@ -42,14 +44,26 @@
   }
 }
 
+.name {
+  @extend %titleShared-24;
+
+  margin-bottom: 4px;
+}
+
+.info {
+  @extend %mainTextShared;
+
+  font-size: 14px;
+}
+
 .title {
-  @extend %titleShared;
+  @extend %titleShared-72;
 
   margin-bottom: 56px;
 }
 
 .subtitle {
-  @extend %subtitleShared;
+  @extend %titleShared-32;
 
   margin-bottom: 117px;
   position: relative;

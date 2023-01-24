@@ -1,10 +1,11 @@
+import React, { useMemo } from 'react';
 import Image, { StaticImageData } from 'next/image';
+
 import MentorImage1 from 'images/mentors/mentor-1.jpeg';
 import MentorImage2 from 'images/mentors/mentor-2.jpeg';
 import MentorImage3 from 'images/mentors/mentor-3.jpeg';
 
 import css from './AboutUs.module.scss';
-import { useMemo } from 'react';
 
 type Mentor = {
   name: string;
@@ -37,8 +38,8 @@ const AboutUs = () => {
         <div className={css.imageContainer}>
           <Image className={css.image} src={mentor.image} alt={mentor.name} />
         </div>
-        <h4>{mentor.name}</h4>
-        <span>{mentor.description}</span>
+        <h4 className={css.name}>{mentor.name}</h4>
+        <span className={css.info}>{mentor.description}</span>
       </div>
     ));
   }, []);

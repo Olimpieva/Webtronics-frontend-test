@@ -16,7 +16,7 @@
   color: $mainTextColor;
 }
 
-%titleShared {
+%titleShared-72 {
   font-family: 'Clash Display', 'Helvetica', sans-serif;
   font-size: 72px;
   font-weight: 600;
@@ -24,10 +24,18 @@
   color: $mainTextColor;
 }
 
-%subtitleShared {
+%titleShared-32 {
   font-family: 'Clash Display', 'Helvetica', sans-serif;
   font-size: 32px;
   font-weight: 600;
+  line-height: 120%;
+  color: $mainTextColor;
+}
+
+%titleShared-24 {
+  font-family: 'Clash Display', 'Helvetica', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
   line-height: 120%;
   color: $mainTextColor;
 }

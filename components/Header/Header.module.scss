@@ -1,14 +1,22 @@
+@import 'styles/scss/extensions.scss';
+
 .header {
-  padding: 40px 0;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 40px 44px 40px 40px;
+  box-sizing: content-box;
   display: flex;
-  justify-content: center;
-  gap: 23%;
+  justify-content: space-between;
 }
 
-.navList {
+.linkList {
   margin: 0;
   padding: 0;
   display: flex;
   gap: 48px;
   list-style-type: none;
+}
+
+.link {
+  @extend %mainTextShared;
 }

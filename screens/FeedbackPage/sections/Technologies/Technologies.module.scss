@@ -1,0 +1,62 @@
+@import 'styles/scss/mixins.scss';
+@import 'styles/scss/extensions.scss';
+
+.section {
+  position: relative;
+  margin: 0 0 184px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  @extend %titleShared-72;
+
+  max-width: 543px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.description {
+  @extend %mainTextShared;
+
+  max-width: 432px;
+  margin-bottom: 54px;
+  text-align: center;
+}
+
+.techList {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tech {
+  padding: 24px 9px 24px 10px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('/gradient-border.svg') no-repeat center;
+  backdrop-filter: blur(5px);
+  //   border-radius: 16px;
+  //   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 51px) 100%, 0 100%);
+  //   overflow: hidden;
+}
+
+.imageContainer {
+  margin-bottom: 16px;
+  width: 162px;
+  height: 136px;
+  display: flex;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.techName {
+  @extend %titleShared-24;
+}

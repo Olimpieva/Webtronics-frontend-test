@@ -4,6 +4,6 @@ import Logo from './Logo';
 import FeedbackForm from './FeedbackForm';
 import Button from './Button';
 import ErrorMessageLabel from './ErrorMessageLabel';
-import Promo from './Promo';
+import Collapse from './Collapse';
 
-export { Footer, Header, Logo, FeedbackForm, Button, ErrorMessageLabel, Promo };
+export { Footer, Header, Logo, FeedbackForm, Button, ErrorMessageLabel, Collapse };

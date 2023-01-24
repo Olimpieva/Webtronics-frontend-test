@@ -3,7 +3,7 @@
 @import 'styles/scss/extensions.scss';
 
 .form {
-  @include roundedGradientBorder(20px, $gradient-1);
+  @include roundedGradientBorder(20px, 1px, $gradient-1);
 
   max-width: 1224px;
   margin: 0 auto;
@@ -11,10 +11,11 @@
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
+  z-index: 2;
 }
 
 .title {
-  @extend %subtitleShared;
+  @extend %titleShared-32;
 
   margin: 0 0 16px;
   text-align: center;

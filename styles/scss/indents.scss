@@ -41,7 +41,7 @@ $i: 4;
     padding-right: #{$i}px;
   }
 
-  $i: $i + (4 * 1);
+  $i: $i + 1;
 }
 
 .margin-horizontal-auto {
