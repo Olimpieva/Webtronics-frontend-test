@@ -1,9 +1,10 @@
 import Footer from './Footer';
 import Header from './Header';
 import Logo from './Logo';
-import FeedbackForm from './FeedbackForm';
 import Button from './Button';
+import InputField from './InputField';
 import ErrorMessageLabel from './ErrorMessageLabel';
 import Collapse from './Collapse';
+import Carousel from './Carousel';
 
-export { Footer, Header, Logo, FeedbackForm, Button, ErrorMessageLabel, Collapse };
+export { Footer, Header, Logo, Button, InputField, ErrorMessageLabel, Collapse, Carousel };

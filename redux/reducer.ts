@@ -1,7 +1,9 @@
-import { combineReducers } from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit';
+
+import feedbackReducer from './feedback/reducer';
 
 const reducer = combineReducers({
-  menu: () => 'Ya reducer',
-})
+  feedback: feedbackReducer
+});
 
-export default reducer
+export default reducer;

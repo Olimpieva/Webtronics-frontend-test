@@ -4,9 +4,7 @@
 .error {
   @extend %mainTextShared;
 
-  position: absolute;
-  top: calc(100% + 2px);
-  left: 0;
-  font-size: 10px;
-  color: $errorTextColor;
+  margin-top: 4px;
+  font-size: 16px;
+  color: $mainTextColor;
 }

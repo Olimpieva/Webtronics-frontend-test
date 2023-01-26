@@ -18,9 +18,15 @@
   max-width: 493px;
   max-height: 70px;
   padding: 24px;
-  background: rgba(255, 255, 255, 0.05);
+  background: $substractBgColor;
   border: none;
+  border-radius: 8px;
   color: $formTextColor;
+
+  &:focus {
+    outline: none;
+    color: $mainTextColor;
+  }
 
   &::placeholder {
     color: $formTextColor;
@@ -45,5 +51,38 @@
 
   &::-ms-input-placeholder {
     color: $formTextColor;
+  }
+}
+
+.disabled {
+  .inputContainer {
+    background: transparent;
+    border: none;
+
+    &::before {
+      background: transparent;
+    }
+  }
+
+  .input {
+    border: 1px solid $disabledColor;
+    color: $disabledColor;
+  }
+}
+
+.invalid {
+  .inputContainer {
+    background: transparent;
+    border: none;
+
+    &::before {
+      background: transparent;
+    }
+  }
+
+  .input {
+    border: 1px solid $errorColor;
+    background: $invalidBgColor;
+    color: $mainTextColor;
   }
 }

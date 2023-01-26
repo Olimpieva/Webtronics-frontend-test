@@ -1,43 +1,44 @@
-import React, { ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
-import PlusIcon from 'images/plus-icon.svg';
-import MinusIcon from 'images/minus-icon.svg';
+import { CollapseItem } from 'entities/collapse';
+import PlusIcon from 'images/icons/plus-icon.svg';
+import MinusIcon from 'images/icons/minus-icon.svg';
 
 import css from './Collapse.module.scss';
 
-type Da = {
-  title: string;
-  description: string;
-};
-
 type Props = {
-  items: Da[];
-  default?: number;
+  items: CollapseItem[];
+  defaultKeys?: number[];
 };
 
-const Collapse = ({ items }: Props) => {
-  console.log('FEEDBACK PAGE');
+const Collapse = ({ items, defaultKeys }: Props) => {
+  const [activeKeys, setActiveKeys] = useState<boolean[]>(() => {
+    const mask = new Array(items.length).fill(false);
 
-  const [activeKeys, setActiveKeys] = useState<boolean[]>(new Array(items.length).fill(false));
+    if (defaultKeys !== undefined) {
+      defaultKeys.forEach((key) => (mask[key] = true));
+    }
 
-  const switchVisibility = useCallback((key: number) => {
-    console.log('ya utu');
-    setActiveKeys((prevState) => {
-      const newState = [...prevState];
-      newState[key] = !prevState[key];
+    return mask;
+  });
 
-      return newState;
-    });
-  }, []);
+  const switchVisibility = useCallback(
+    (key: number) =>
+      setActiveKeys((prevState) => {
+        const newState = [...prevState];
+        newState[key] = !prevState[key];
 
-  console.log({ activeKeys });
+        return newState;
+      }),
+    []
+  );
 
   const cards = useMemo(
     () =>
       items.map((item, index) => (
         <div key={index} className={`${css.card} ${activeKeys[index] && css.visible}`}>
           <button type="button" onClick={() => switchVisibility(index)} className={css.button}>
-            {activeKeys[index] ? <MinusIcon /> : <PlusIcon />}
+            {activeKeys[index] ? <PlusIcon /> : <MinusIcon />}
           </button>
           <h4 className={css.title}>{item.title}</h4>
           <div className={`${css.descriptionContainer}`}>
@@ -48,11 +49,7 @@ const Collapse = ({ items }: Props) => {
     [items, activeKeys]
   );
 
-  return (
-    <div className={css.container}>
-      <div>{cards}</div>
-    </div>
-  );
+  return <div className={css.container}>{cards}</div>;
 };
 
-export default Collapse;
+export default React.memo(Collapse);

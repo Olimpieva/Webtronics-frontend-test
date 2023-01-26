@@ -1,18 +1,20 @@
-// @import 'styles/common';
 @import 'styles/scss/extensions.scss';
 
-.title {
-  @extend %titleShared-72;
-
-  margin-bottom: 56px;
-}
-
 .section {
+  min-height: 743px;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.title {
+  @extend %titleShared-72;
+
+  max-width: 641px;
+  margin-bottom: 56px;
+  text-align: center;
 }
 
 .content {
@@ -25,10 +27,30 @@
   @extend %mainTextShared;
 
   max-width: 496px;
+
+  span {
+    display: block;
+  }
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  min-width: 496px;
 }
 
 .image {
-  width: 344px;
-  height: 405px;
-  object-fit: cover;
+  margin: 100px auto 0;
+  max-width: 344px;
+  max-height: 360px;
+  scale: 2.1;
+}
+
+@media screen and (max-width: $tabletBreakpoint) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+    align-items: center;
+  }
 }

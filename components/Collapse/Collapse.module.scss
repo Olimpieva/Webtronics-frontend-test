@@ -2,27 +2,25 @@
 @import 'styles/scss/mixins.scss';
 @import 'styles/scss/variables';
 
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .card {
   max-width: 703px;
-  margin-bottom: 24px;
   padding: 17px 20px 17px 24px;
   position: relative;
-  // background: url('/gradient-border-long.svg') no-repeat;
   transition: padding 0.3s ease-in-out;
-  // transition: background-image 0.3s linear;
+  z-index: 10;
 
-  &:nth-child(even) {
-    @include card-clip(20px, 20px);
-  }
-
-  &:nth-child(odd) {
-    // @include roundedGradientBorder(8px, 1px, $gradient-1);
-    @include croppedRoundedGradientBorder(8px, 1px, $gradient-1, 32px, 0%, 32px);
-  }
+  @include roundedGradientBorder(8px, 1px, $gradient-1);
+  @include croppedBorder(32px, true, false, true);
 }
 
 .button {
-  padding: 28px 21px;
+  padding: 16px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,6 +29,7 @@
   right: 0;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .title {
@@ -43,7 +42,6 @@
 
 .descriptionContainer {
   height: 0;
-  //   padding-top: 16px;
   box-sizing: content-box;
   max-height: 500px;
   overflow: hidden;
@@ -52,10 +50,13 @@
 
 .visible {
   padding: 28px 21px 28px 24px;
-  //   background: url('/gradient-border-long-full.svg') no-repeat;
 
   .descriptionContainer {
     height: 66px;
     padding-top: 16px;
+  }
+
+  .button {
+    padding: 24px 16px;
   }
 }

@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 40px;
   box-sizing: content-box;
 }
 
@@ -34,14 +33,27 @@
   width: 188px;
   height: 188px;
   margin: 0 0 16px;
+  position: relative;
+  border-radius: 50%;
 
-  @include roundedGradientBorder(50%, 2px, $gradient-1);
-
-  .image {
-    width: 100%;
-    height: 188px;
+  &::before {
+    content: '';
+    padding: 2px;
+    position: absolute;
+    inset: 0;
+    background: $gradient-1;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     border-radius: 50%;
   }
+}
+
+.image {
+  width: 100%;
+  height: 188px;
+  border-radius: 50%;
 }
 
 .name {
@@ -78,7 +90,7 @@
     left: 50%;
     top: 50px;
     transform: translateX(-50%);
-    background: url('/mentors-scheme-lines.svg') no-repeat;
+    background: url('/assets/icons/mentors-scheme-lines.svg') no-repeat;
   }
 }
 
@@ -87,4 +99,18 @@
 
   max-width: 486px;
   margin-top: 109px;
+}
+
+@media screen and (max-width: $desktopBreakpoint) {
+  .container {
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .description {
+    width: 100%;
+    text-align: center;
+    margin: 109px auto 0;
+  }
 }

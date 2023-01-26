@@ -1,0 +1,9 @@
+@import 'styles/scss/variables.scss';
+
+.layout {
+  margin: 0 auto;
+  padding: 0 $pagePadding;
+  position: relative;
+  background-color: $mainBgColor;
+  z-index: 0;
+}

@@ -1,18 +1,14 @@
-import React, { useMemo, ReactElement } from 'react';
+import React, { useMemo } from 'react';
 
-import AngularIcon from 'images/icons/angular.svg';
-import JsIcon from 'images/icons/js.svg';
-import ReactIcon from 'images/icons/react.svg';
-import VueIcon from 'images/icons/vue.svg';
+import { Technology } from 'entities/technology';
+import AngularIcon from 'images/tech/angular.svg';
+import JsIcon from 'images/tech/js.svg';
+import ReactIcon from 'images/tech/react.svg';
+import VueIcon from 'images/tech/vue.svg';
 
 import css from './Technologies.module.scss';
 
-type Technology = {
-  name: string;
-  image: ReactElement;
-};
-
-const technologiesData: Technology[] = [
+const technologyItems: Technology[] = [
   {
     name: 'Angular',
     image: <AngularIcon />
@@ -34,7 +30,7 @@ const technologiesData: Technology[] = [
 const Technologies = () => {
   const technologies = useMemo(
     () =>
-      technologiesData.map((technology) => (
+      technologyItems.map((technology) => (
         <li key={technology.name} className={css.tech}>
           <div className={css.imageContainer}>{technology.image}</div>
           <h4 className={css.techName}>{technology.name}</h4>
@@ -44,7 +40,7 @@ const Technologies = () => {
   );
 
   return (
-    <section className={css.section}>
+    <section className={css.section} id="programs">
       <h2 id="technologies" className={css.title}>
         Programming technologies
       </h2>

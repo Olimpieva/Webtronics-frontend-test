@@ -1,54 +1,82 @@
 @import './variables.scss';
 
+@function if($condition, $if-value, $else-value) {
+  @if ($condition == true) {
+    @return $if-value;
+  } @else {
+    @return $else-value;
+  }
+}
+
 @mixin roundedGradientBorder($radius, $size, $gradient) {
   position: relative;
+  background: $gradient;
   border-radius: $radius;
+  clip-path: polygon(0px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 0px);
 
   &::before {
     content: '';
     position: absolute;
-    padding: $size;
-    inset: 0;
-    background: $gradient;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+    top: $size;
+    right: $size;
+    bottom: $size;
+    left: $size;
+    background: linear-gradient(rgba(#fff, 0.05), rgba(#fff, 0.05)), linear-gradient($mainBgColor, $mainBgColor);
     border-radius: $radius;
+    clip-path: polygon(0px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 0px);
     z-index: -1;
-    // clip-path: polygon(0px 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 0px);
+    pointer-events: none;
   }
 }
 
-// @function if($condition, $if-value, $else-value) {
-//   @if ($condition == true) {
-//       @return $if-value;
-//   } @else {
-//       @return $else-value;
-//   }
-// }
+@mixin croppedBorder($corner: 32px, $top-left: false, $top-right: false, $bottom-right: false, $bottom-left: false) {
+  clip-path: polygon(
+    if($top-left == true, 0 $corner, 0 0),
+    if($top-left == true, $corner 0, 0 0),
+    if($top-right == true, calc(100% - $corner) 0, 100% 0),
+    if($top-right == true, 100% $corner, 100% 0),
+    if($bottom-right == true, 100% calc(100% - $corner), 100% 100%),
+    if($bottom-right == true, calc(100% - $corner) 100%, 100% 100%),
+    if($bottom-left == true, $corner 100%, 0 100%),
+    if($bottom-left == true, 0 calc(100% - $corner), 0 100%)
+  );
+
+  &::before {
+    clip-path: polygon(
+      if($top-left == true, 0 $corner, 0 0),
+      if($top-left == true, $corner 0, 0 0),
+      if($top-right == true, calc(100% - $corner) 0, 100% 0),
+      if($top-right == true, 100% $corner, 100% 0),
+      if($bottom-right == true, 100% calc(100% - $corner), 100% 100%),
+      if($bottom-right == true, calc(100% - $corner) 100%, 100% 100%),
+      if($bottom-left == true, $corner 100%, 0 100%),
+      if($bottom-left == true, 0 calc(100% - $corner), 0 100%)
+    );
+  }
+}
 
 @mixin croppedRoundedGradientBorder(
   $radius,
   $size,
   $gradient,
-  $top-left: 0px,
-  $top-right: 0px,
-  $bottom-right: 0px,
-  $bottom-left: 0px,
-  $corner: 32px
+  $corner: 32px,
+  $top-left: false,
+  $top-right: false,
+  $bottom-right: false,
+  $bottom-left: false
 ) {
   position: relative;
   background: $gradient;
   border-radius: $radius;
   clip-path: polygon(
-    $top-left 0,
-    calc(100% - $top-right) 0,
-    100% $corner,
-    100% calc(100% - $corner),
-    calc(100% - $bottom-right) 100%,
-    $bottom-left 100%,
-    0 calc(100% - $corner),
-    0 calc(100% - $corner)
+    if($top-left == true, 0 $corner, 0 0),
+    if($top-left == true, $corner 0, 0 0),
+    if($top-right == true, calc(100% - $corner) 0, 100% 0),
+    if($top-right == true, 100% $corner, 100% 0),
+    if($bottom-right == true, 100% calc(100% - $corner), 100% 100%),
+    if($bottom-right == true, calc(100% - $corner) 100%, 100% 100%),
+    if($bottom-left == true, $corner 100%, 0 100%),
+    if($bottom-left == true, 0 calc(100% - $corner), 0 100%)
   );
 
   &::before {
@@ -60,55 +88,17 @@
     left: $size;
     background: linear-gradient(rgba(#fff, 0.05), rgba(#fff, 0.05)), linear-gradient($mainBgColor, $mainBgColor);
     border-radius: $radius;
-    // clip-path: polygon($top 0, 100% 0, 100% calc(100% - $bottom), calc(100% - $bottom) 100%, 0 100%, 0 $top);
     clip-path: polygon(
-      $top-left 0,
-      calc(100% - $top-right) 0,
-      100% $corner,
-      100% calc(100% - $corner),
-      calc(100% - $bottom-right) 100%,
-      $bottom-left 100%,
-      0 calc(100% - $corner),
-      0 calc(100% - $corner)
+      if($top-left == true, 0 $corner, 0 0),
+      if($top-left == true, $corner 0, 0 0),
+      if($top-right == true, calc(100% - $corner) 0, 100% 0),
+      if($top-right == true, 100% $corner, 100% 0),
+      if($bottom-right == true, 100% calc(100% - $corner), 100% 100%),
+      if($bottom-right == true, calc(100% - $corner) 100%, 100% 100%),
+      if($bottom-left == true, $corner 100%, 0 100%),
+      if($bottom-left == true, 0 calc(100% - $corner), 0 100%)
     );
+    pointer-events: none;
     z-index: -1;
-  }
-}
-
-@mixin card-without-blur {
-  position: relative;
-  backdrop-filter: blur(5px);
-  background: $gradient-1;
-  border-radius: 8px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 1px;
-    right: 1px;
-    bottom: 1px;
-    left: 1px;
-    z-index: -1;
-    background: linear-gradient(rgba(#fff, 0.05), rgba(#fff, 0.05)), linear-gradient($mainBgColor, $mainBgColor);
-    border-radius: inherit;
-  }
-}
-
-@mixin clip-polygon($radius-top-left, $radius-bottom-right: $radius-top-left) {
-  clip-path: polygon(5% 0%, 100% 0%, 100% 30%, 100% 70%, 95% 100%, 5% 100%, 0% 70%, 0% 32px);
-
-  // corner = 32px
-
-  // (top-left, 0; 100 - top-right, 0; 100% corner; 100%, 100 - corner; 100 - bottom-right, 100; bottom-left, 100%; 0, 100 - corner; 0, 100 - corner;)
-
-  // top-left, 0; 100 - top-right, ..., ..., ..., bottom-left 100, ..., ...
-}
-
-@mixin card-clip($radius-top-left, $radius-bottom-right: $radius-top-left) {
-  @include card-without-blur;
-  @include clip-polygon($radius-top-left, $radius-bottom-right);
-
-  &::before {
-    @include clip-polygon($radius-top-left, $radius-bottom-right);
   }
 }

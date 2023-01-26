@@ -3,7 +3,7 @@
 .container {
   max-width: 1191px;
   margin: 0 auto;
-  padding: 0 60px 0 40px;
+  padding-right: 20px;
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
   @extend %mainTextShared;
 
   max-width: 359px;
-  margin: 36px 0 0;
+  margin-top: 36px;
 }
 
 .containerTop {
@@ -39,4 +39,18 @@
 
   margin: -8px 20px 0 0;
   align-self: flex-end;
+}
+
+@media screen and (max-width: $desktopBreakpoint) {
+  .container {
+    max-width: 935px;
+  }
+
+  .title {
+    font-size: 98px;
+  }
+
+  .description {
+    margin-top: 0;
+  }
 }

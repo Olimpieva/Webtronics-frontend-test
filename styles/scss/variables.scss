@@ -1,12 +1,20 @@
-$desktopBreakpoint: 1024px;
-$tabletBreakpoint: 780px;
-$mobileBreakpoint: 450px;
-$maxAppWidth: 800px;
+$desktopBreakpoint: 1328px;
+$tabletBreakpoint: 1024px;
+$maxAppWidth: 1921px;
+$pagePadding: 40px;
+
+$mainTextFontFamily: 'Inter', 'Helvetica', sans-serif;
+$titleFontFamily: 'Clash Display', 'Helvetica', sans-serif;
+$mainTextHeadFontFamily: 'Roboto', 'Helvetica', sans-serif;
 
 $mainBgColor: #0c102d;
+$substractBgColor: rgba(255, 255, 255, 0.05);
+
+$invalidBgColor: rgba(255, 165, 165, 0.2);
+$errorColor: #fd4646;
+$disabledColor: #636363;
 $mainTextColor: #fff;
 $formTextColor: #a2cbfb;
-$errorTextColor: #fd4646;
 
 $mainButtonTextColor: #0a1482;
 $hoverButtonTextColor: #3b48d0;
@@ -26,3 +34,4 @@ $gradient-3-cropped: linear-gradient(
   rgba(21, 191, 253, 0.7) 90.95%,
   rgba(156, 55, 253, 0.7) 97.95%
 );
+$gradient-1-reversed: linear-gradient(152.14deg, rgba(156, 55, 253, 0.7) 9.96%, rgba(21, 191, 253, 0.7));

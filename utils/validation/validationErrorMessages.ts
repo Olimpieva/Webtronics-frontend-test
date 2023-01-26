@@ -1,6 +1,6 @@
 export default {
   common: {
-    isEmpty: (field: string) => `Поле "${field}" обязательно для заполнения`,
-    isInvalid: (field: string) => `Поле "${field}" заполнено некорректно`
+    isEmpty: (field: string) => `The field "${field}" is required`,
+    isInvalid: (field: string) => `The field "${field}" filled in incorrectly`
   }
 };

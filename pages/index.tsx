@@ -1,11 +1,15 @@
 import React from 'react';
-import { FeedbackPage } from '../screens';
+
+import { BackgroundDecorationsLayout, MainLayout } from 'layouts';
+import { FeedbackPage } from 'screens';
 
 const Main = () => {
   return (
-    <div>
-      <FeedbackPage />
-    </div>
+    <MainLayout>
+      <BackgroundDecorationsLayout>
+        <FeedbackPage />
+      </BackgroundDecorationsLayout>
+    </MainLayout>
   );
 };
 

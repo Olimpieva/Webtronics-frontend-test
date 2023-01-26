@@ -1,9 +1,8 @@
 @import 'styles/scss/mixins.scss';
 @import 'styles/scss/extensions.scss';
+@import 'styles/scss/variables.scss';
 
 .section {
-  position: relative;
-  margin: 0 0 184px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,30 +25,26 @@
 }
 
 .techList {
-  list-style-type: none;
   display: flex;
   justify-content: center;
   gap: 25px;
 }
 
 .tech {
-  padding: 24px 9px 24px 10px;
   min-height: 230px;
+  padding: 24px 9px 24px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url('/gradient-border.svg') no-repeat center;
-  backdrop-filter: blur(5px);
-  //   border-radius: 16px;
-  //   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 51px) 100%, 0 100%);
-  //   overflow: hidden;
+
+  @include roundedGradientBorder(16px, 1px, $gradient-1-reversed);
+  @include croppedBorder(42px, false, false, true);
 }
 
 .imageContainer {
-  margin-bottom: 16px;
   width: 162px;
   height: 136px;
-  display: flex;
+  margin-bottom: 16px;
 
   svg {
     width: 100%;

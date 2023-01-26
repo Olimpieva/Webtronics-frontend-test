@@ -1,18 +1,12 @@
 import React, { useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
-// import Logo from 'images/icons/logo.svg';
+import Logo from 'components/Logo';
+import { Link as LinkDataType } from 'entities/link';
 
 import css from './Header.module.scss';
-import Logo from 'components/Logo';
 
-type LinkDataType = {
-  title: string;
-  to: string;
-};
-
-const linksData: LinkDataType[] = [
+const linkItems: LinkDataType[] = [
   {
     title: 'About',
     to: '#about'
@@ -27,7 +21,7 @@ const linksData: LinkDataType[] = [
   },
   {
     title: 'Questions',
-    to: '#questions'
+    to: '#faq'
   },
   {
     title: 'Get in touch',
@@ -38,7 +32,7 @@ const linksData: LinkDataType[] = [
 const Header = () => {
   const links = useMemo(
     () =>
-      linksData.map((link) => (
+      linkItems.map((link) => (
         <li key={link.title} className={css.link}>
           <Link href={link.to}>{link.title}</Link>
         </li>

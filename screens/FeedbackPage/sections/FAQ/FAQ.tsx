@@ -1,16 +1,13 @@
-// import Accordion from '@components/Accordion';
-import css from './FAQ.module.scss';
-
-import QuestionIcon from 'images/question.png';
-import { Collapse } from 'components';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 
-type FAQItem = {
-  title: string;
-  description: string;
-};
+import { CollapseItem } from 'entities/collapse';
+import { Collapse } from 'components';
+import QuestionIcon from 'images/icons/question.png';
 
-const items: FAQItem[] = [
+import css from './FAQ.module.scss';
+
+const FAQItems: CollapseItem[] = [
   {
     title: 'What is the price?',
     description:
@@ -38,28 +35,26 @@ const items: FAQItem[] = [
   }
 ];
 
-const FAQ = () => {
-  return (
-    <section className={css.section}>
-      <h2 id="faq" className={css.title}>
-        Frequently Asked Questions
-      </h2>
+const FAQ = () => (
+  <section className={css.section} id="faq">
+    <h2 id="faq" className={css.title}>
+      Frequently Asked Questions
+    </h2>
 
-      <div className={css.content}>
-        <div className={css.leftContainer}>
-          <p className={css.description}>
-            Do you have any kind of questions? <span>We are here to help.</span>
-          </p>
+    <div className={css.content}>
+      <div className={css.leftContainer}>
+        <p className={css.description}>
+          Do you have any kind of questions? <span>We are here to help.</span>
+        </p>
 
-          <Image src={QuestionIcon} alt="Question" className={css.image} />
-        </div>
-
-        <div className={css.rightContainer}>
-          <Collapse items={items} default={0} />
-        </div>
+        <Image src={QuestionIcon} alt="Question" className={css.image} />
       </div>
-    </section>
-  );
-};
+
+      <div className={css.rightContainer}>
+        <Collapse items={FAQItems} defaultKeys={[0]} />
+      </div>
+    </div>
+  </section>
+);
 
 export default FAQ;

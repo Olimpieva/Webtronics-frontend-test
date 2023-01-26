@@ -1,11 +1,8 @@
 import React, { useMemo } from 'react';
 
-import css from './Steps.module.scss';
+import { Step } from 'entities/step';
 
-type Step = {
-  title: string;
-  description: string;
-};
+import css from './Steps.module.scss';
 
 const stepData: Step[] = [
   {
@@ -50,10 +47,8 @@ const Steps = () => {
   );
 
   return (
-    <section className={css.section}>
-      <h2 id="steps" className={css.title}>
-        Steps
-      </h2>
+    <section className={css.section} id="steps">
+      <h2 className={css.title}>Steps</h2>
       <ul className={css.stepList}>{steps}</ul>
     </section>
   );
