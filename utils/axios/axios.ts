@@ -10,9 +10,6 @@ const axios = applyCaseMiddleware(
     responseType: 'json',
     baseURL: 'http://localhost:3004'
   })
-  // {
-  //   ignoreHeaders: true
-  // }
 );
 
 export type Response<T> = AxiosResponse<T>;
